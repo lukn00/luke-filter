@@ -7,8 +7,10 @@ import datetime
 current_date = datetime.datetime.now()
 date = str(current_date.month)+ '_' + str(current_date.day) + '_' + str(current_date.year)
 
-firstcolumn = '(Required)'
-secondcolumn = 'Comments'
+#firstcolumn = '(Required)'
+#secondcolumn = 'Comments'
+firstcolumn = 'Company Name'
+secondcolumn = 'Contact Name'
 
 
 pro2=pd.read_csv("_pros.csv")
@@ -22,9 +24,9 @@ bad=bad2[bad2.columns[0]]
 
 
 
-my_file = "PURPS.csv"
+my_file = "scrub.csv"
 
-df = pd.read_csv(my_file)
+df = pd.read_csv(my_file, low_memory=False)
 
 local = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New.Hampshire','New.Jersey','New.Mexico','New.York','North.Carolina','North.Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode.Island','South.Carolina','South.Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West.Virginia','Wisconsin','Wyoming','AL','AK','AZ','AR','CA','CO','CT','DE','DC','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY']
 
@@ -53,7 +55,7 @@ purped_csv.sort_values("Bad Name", inplace = True)
 
 purped_csv.sort_values("Score", inplace = True)
 
-purped_csv.to_csv ("PURPED_" + date + ".csv", index=False, encoding='utf-8-sig')
+purped_csv.to_csv ("SCRUBBED_" + date + ".csv", index=False, encoding='utf-8-sig')
 
 ###.version.3 Scoring System fully applied.  01.31.22
 print('done')
