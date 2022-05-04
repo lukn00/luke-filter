@@ -161,4 +161,4 @@ print(f"successfully processed {len(df['Score'])} records.  thank you for shoppi
 ##sound to play when done
 duration = 100  # milliseconds
 freq = 700  # Hz
-winsound.Beep(freq, duration)
+#winsound.Beep(freq, duration)
